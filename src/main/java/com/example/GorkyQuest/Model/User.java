@@ -1,32 +1,28 @@
-package org.babidzhonio.hacaton;
+package com.example.GorkyQuest.Model;
+
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
+@Entity
+@Table(name = "users",schema = "gorkyquest")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "Users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
     private int id;
 
-    @Column(name = "Name")
-    private String name;
+    @Column(name = "username",nullable = false)
+    private String UserName;
 
-    @Column(name = "Email")
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "Password")
+    @Column(name = "password_hash",nullable = false)
     private String password;
 
-    @Column(name = "RegistrationDate")
-    private LocalDate registrationDate;
 }
