@@ -36,6 +36,7 @@
             <artifactId>hibernate-core</artifactId>
             <version>6.6.1.Final</version>
         </dependency>
+
         <!-- Spring Boot Starter Parent -->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
         <dependency>
@@ -43,6 +44,7 @@
             <artifactId>spring-boot-starter</artifactId>
             <version>3.3.4</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

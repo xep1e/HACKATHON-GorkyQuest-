@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="TextEnter">Если есть аккаунт</string>
+    <string name="TextReg">Если нет аккаунта  </string>
+    <string name="ButtonEnter">Войти </string>
+    <string name="ButtonReg">Зарегестрироваться </string>
+
+    <string name="prompt_name">Enter name</string>
+    <string name="prompt_password">Введите пароль</string>
+    <string name="promt_email">Введите почту</string>
+
+
+</resources>
