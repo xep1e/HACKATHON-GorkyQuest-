@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+    //кнопка для открытия формы регистрации
     public void OpenFormReg(View v){
-        Intent intent=new Intent(this,formForReg.class);
+        Intent intent=new Intent(this,FormForRegister.class);
         startActivity(intent);
 
     }
