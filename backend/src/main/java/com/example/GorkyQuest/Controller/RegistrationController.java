@@ -1,5 +1,6 @@
 package com.example.GorkyQuest.Controller;
 
+import com.example.GorkyQuest.Exception.UserRegistrationException;
 import com.example.GorkyQuest.Model.User;
 import com.example.GorkyQuest.Service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +21,13 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody User user) {
-        String message = registrationService.registerUser(user);
         try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(message);
-        }catch (DataIntegrityViolationException ex){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
+            String message = registrationService.registerUser(user);
+            return ResponseEntity.ok(message);
+        } catch (UserRegistrationException e){
+          return ResponseEntity.status(401).body(e.getMessage());
+        } catch (DataIntegrityViolationException ex){
+            return ResponseEntity.status(500).body("Ошибка на сервере");
         }
     }
 }
